@@ -22,12 +22,6 @@ public class CustomToggleButton extends FrameLayout {
 	public CustomToggleButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		// After last commit ????????????????????????????????
-		
-		//  try again      
-		//Initalise and configure view layout
-		
-		//again
 		RelativeLayout layout = new RelativeLayout(context);
 		ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
 		layout.setLayoutParams(layoutParams);
@@ -55,7 +49,8 @@ public class CustomToggleButton extends FrameLayout {
 		buttonParams.bottomMargin = 16;
 		buttonParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 		buttonParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-		buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, label.getId());
+//		buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, label.getId());
+		buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, 2);
 
 		//Initalise and configure button label
 		label = new TextView(context);

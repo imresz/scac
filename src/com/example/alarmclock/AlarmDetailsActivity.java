@@ -17,12 +17,40 @@ import android.widget.TimePicker;
 public class AlarmDetailsActivity extends Activity {
 	private AlarmModel alarmDetails;
 	
+	private TimePicker timePicker;
+	private EditText edtName;
+	private CustomToggleButton chkWeekly;
+	private CustomToggleButton chkSunday;
+	private CustomToggleButton chkMonday;
+	private CustomToggleButton chkTuesday;
+	private CustomToggleButton chkWednesday;
+	private CustomToggleButton chkThursday;
+	private CustomToggleButton chkFriday;
+	private CustomToggleButton chkSaturday;
+	private TextView txtToneSelection;
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		getActionBar().setTitle("Create New Alarm");
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		
+		timePicker = (TimePicker) findViewById(R.id.alarm_details_time_picker);
+		edtName = (EditText) findViewById(R.id.alarm_details_name);
+		chkWeekly = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_weekly);
+		chkSunday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_sunday);
+		chkMonday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_monday);
+		chkTuesday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_tuesday);
+		chkWednesday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_wednesday);
+		chkThursday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_thursday);
+		chkFriday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_friday);
+		chkSaturday = (CustomToggleButton) findViewById(R.id.alarm_details_repeat_saturday);
+		txtToneSelection = (TextView) findViewById(R.id.alarm_label_tone_selection);
+
 
 		setContentView(R.layout.activity_alarm_details);
 		alarmDetails = new AlarmModel();
