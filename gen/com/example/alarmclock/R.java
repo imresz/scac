@@ -29,26 +29,25 @@ public final class R {
         public static final int view_touch_selector=0x7f020004;
     }
     public static final class id {
-        public static final int action_add_new_alarm=0x7f080014;
-        public static final int action_save_alarm_details=0x7f080012;
-        public static final int action_settings=0x7f080013;
-        public static final int alarm_details_label_saturday=0x7f08000d;
+        public static final int action_add_new_alarm=0x7f080013;
+        public static final int action_save_alarm_details=0x7f080011;
+        public static final int action_settings=0x7f080012;
         public static final int alarm_details_name=0x7f080001;
         public static final int alarm_details_repeat_friday=0x7f08000a;
         public static final int alarm_details_repeat_monday=0x7f080006;
         public static final int alarm_details_repeat_saturday=0x7f08000b;
-        public static final int alarm_details_repeat_sunday=0x7f080004;
+        public static final int alarm_details_repeat_sunday=0x7f080005;
         public static final int alarm_details_repeat_thursday=0x7f080009;
         public static final int alarm_details_repeat_tuesday=0x7f080007;
         public static final int alarm_details_repeat_wednesday=0x7f080008;
         public static final int alarm_details_repeat_weekly=0x7f080003;
         public static final int alarm_details_time_picker=0x7f080000;
-        public static final int alarm_label_tone=0x7f08000f;
-        public static final int alarm_label_tone_selection=0x7f080010;
-        public static final int alarm_ringtone_container=0x7f08000e;
-        public static final int divider1=0x7f080005;
+        public static final int alarm_label_tone=0x7f08000e;
+        public static final int alarm_label_tone_selection=0x7f08000f;
+        public static final int alarm_ringtone_container=0x7f08000d;
+        public static final int divider1=0x7f080004;
         public static final int divider2=0x7f080002;
-        public static final int divider3=0x7f080011;
+        public static final int divider3=0x7f080010;
         public static final int divider4=0x7f08000c;
     }
     public static final class layout {
