@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -104,10 +103,18 @@ public class AlarmDetailsActivity extends Activity {
 		switch (id) {
 			case android.R.id.home: {
 				finish();
-//				break;
+				break;
 			}
 			case R.id.action_save_alarm_details: {
 				updateModelFromLayout();
+				
+				AlarmDBHelper dbHelper = new AlarmDBHelper(this);
+				if(alarmDetails.id <0 ) {
+					dbHelper.createAlarm(alarmDetails);
+					
+				} else {
+					dbHelper.updateAlarm(alarmDetails);
+				}
 				finish();
 			}
 		}
@@ -117,7 +124,7 @@ public class AlarmDetailsActivity extends Activity {
 		
 		private void updateModelFromLayout() {
 
-			alarmDetails.timeMinute = timePicker.getCurrentMinute().intValue();
+//			alarmDetails.timeMinute = timePicker.getCurrentMinute().intValue();
 			alarmDetails.timeHour = timePicker.getCurrentHour().intValue();
 			alarmDetails.name = edtName.getText().toString();
 			alarmDetails.repeatWeekly = chkWeekly.isChecked();	
@@ -128,5 +135,6 @@ public class AlarmDetailsActivity extends Activity {
 			alarmDetails.setRepeatingDay(AlarmModel.THURSDAY, chkThursday.isChecked());
 			alarmDetails.setRepeatingDay(AlarmModel.FRIDAY, chkFriday.isChecked());
 			alarmDetails.setRepeatingDay(AlarmModel.SATURDAY, chkSaturday.isChecked());
-			alarmDetails.isEnabled = true;		}
+			alarmDetails.isEnabled = true;
+		}
 }
