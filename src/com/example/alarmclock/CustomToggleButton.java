@@ -36,7 +36,7 @@ public class CustomToggleButton extends FrameLayout {
 
 		layout.setBackgroundResource(R.drawable.view_touch_selector);
 
-		//Initalise and configure compound button
+		//Initialize and configure compound button
 		if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 			button = new Switch(context);
 		} else {
@@ -52,7 +52,7 @@ public class CustomToggleButton extends FrameLayout {
 //		buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, label.getId());
 		buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, 2);
 
-		//Initalise and configure button label
+		//Initialize and configure button label
 		label = new TextView(context);
 		label.setId(2);
 

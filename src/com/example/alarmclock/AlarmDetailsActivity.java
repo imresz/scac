@@ -12,8 +12,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class AlarmDetailsActivity extends Activity {
+	private AlarmDBHelper dbHelper = new AlarmDBHelper(this);
 	private AlarmModel alarmDetails;
 	
 	private TimePicker timePicker;
@@ -32,7 +34,6 @@ public class AlarmDetailsActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		
 		super.onCreate(savedInstanceState);
 		
@@ -121,20 +122,38 @@ public class AlarmDetailsActivity extends Activity {
 		
 		return super.onOptionsItemSelected(item);
 	}
-		
-		private void updateModelFromLayout() {
 
-//			alarmDetails.timeMinute = timePicker.getCurrentMinute().intValue();
-			alarmDetails.timeHour = timePicker.getCurrentHour().intValue();
-			alarmDetails.name = edtName.getText().toString();
-			alarmDetails.repeatWeekly = chkWeekly.isChecked();	
-			alarmDetails.setRepeatingDay(AlarmModel.SUNDAY, chkSunday.isChecked());	
-			alarmDetails.setRepeatingDay(AlarmModel.MONDAY, chkMonday.isChecked());	
-			alarmDetails.setRepeatingDay(AlarmModel.TUESDAY, chkTuesday.isChecked());
-			alarmDetails.setRepeatingDay(AlarmModel.WEDNESDAY, chkWednesday.isChecked());	
-			alarmDetails.setRepeatingDay(AlarmModel.THURSDAY, chkThursday.isChecked());
-			alarmDetails.setRepeatingDay(AlarmModel.FRIDAY, chkFriday.isChecked());
-			alarmDetails.setRepeatingDay(AlarmModel.SATURDAY, chkSaturday.isChecked());
-			alarmDetails.isEnabled = true;
+	void showToast(CharSequence msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+		
+	private void updateModelFromLayout() {
+
+		String tPmsg;
+		
+		showToast("getting time");
+		
+		tPmsg = timePicker.getCurrentMinute().toString();
+		
+
+		showToast(tPmsg);
+		alarmDetails.timeMinute = timePicker.getCurrentMinute().intValue();
+		
+//		alarmDetails.timeMinute = 2;
+//		alarmDetails.timeHour = timePicker.getCurrentHour().intValue();
+//		alarmDetails.timeHour = 4;
+//		alarmDetails.name = edtName.getText().toString();
+		alarmDetails.repeatWeekly = chkWeekly.isChecked();	
+		if(alarmDetails.repeatWeekly){
+			showToast("checked weekly");
 		}
+		alarmDetails.setRepeatingDay(AlarmModel.SUNDAY, chkSunday.isChecked());	
+		alarmDetails.setRepeatingDay(AlarmModel.MONDAY, chkMonday.isChecked());	
+		alarmDetails.setRepeatingDay(AlarmModel.TUESDAY, chkTuesday.isChecked());
+		alarmDetails.setRepeatingDay(AlarmModel.WEDNESDAY, chkWednesday.isChecked());	
+		alarmDetails.setRepeatingDay(AlarmModel.THURSDAY, chkThursday.isChecked());
+		alarmDetails.setRepeatingDay(AlarmModel.FRIDAY, chkFriday.isChecked());
+		alarmDetails.setRepeatingDay(AlarmModel.SATURDAY, chkSaturday.isChecked());
+		alarmDetails.isEnabled = true;
+	}
 }
